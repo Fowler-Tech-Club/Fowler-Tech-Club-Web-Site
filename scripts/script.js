@@ -1,23 +1,25 @@
-var bodyHeight = 0;
+
+var sidenav_height;
 
 $(function(){
-	bodyHeight = $(document).height();
+	sidenav_height = $(window).height();
 });
 
-
 function openNav() {
-	$('#mainSideNav').css("width", "250px");
-	$('#mainSideNav').css("opacity", "1");
-	$('#content-wrap').css("margin-left", "250px");
+	document.getElementById("mainSideNav").style.width = "250px";
+	document.getElementById("mainSideNav").style.opacity = "1";
 }
 
 function closeNav() {
-	$("#mainSideNav").css("width", "0px");
-	$('#mainSideNav').css("opacity", "0");
-	$('#content-wrap').css("margin-left", "0px");
+	
+	document.getElementById("mainSideNav").style.width = "0px";
+	document.getElementById("mainSideNav").style.opacity = "0";
 }
 
 $(document).ready(function(){
+
+	document.getElementById('mainSideNav').style.height = sidenav_height + 'px';
+
 	$('#playMusic').click(function(){
 		$('#music').trigger('play');
 		$(this).css('display', 'none');

@@ -3,10 +3,10 @@
 @import "partials/normalize"
 @import "partials/base"
 @import "partials/anime"
-@import "sidenav"
 
 
 body
+	display: block
 	background: $backgroundColor
 	color: $textColor
 	animation:
@@ -40,7 +40,7 @@ a
 		size: contain
 		position: top center
 		attachment: fixed
-	z-index: 1
+	z-index: -1
 
 .title
 	padding-top: 30px
@@ -71,8 +71,18 @@ a
 .is-visible
 	animation: fade-in-anime 200ms ease-in forwards
 
+
+@import "sidenav"
+
 @media screen and (max-height: 450px)
 	.sidenav
 		padding-top: 15px
 		> a
 			font-size: 18px
+
+
+@media screen and (-webkit-min-device-pixel-ratio:0)  
+	#content-wrapper .sidenav 
+		margin-top: 20px
+      
+
