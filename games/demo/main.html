@@ -22,14 +22,18 @@
 			
 			document.body.appendChild(  renderer.domElement  );
 			
-			var geometry, material, dodec;
+			var geometry, material, ring, ring2;
 
-			geometry = new THREE.DodecahedronGeometry(3, 5);
+			geometry = new THREE.RingGeometry(1, 5, 32);
 			material = new THREE.MeshBasicMaterial( { color: 0x00ff00, wireframe: true } );
-			dodec = new THREE.Mesh( geometry, material );
+			ring = new THREE.Mesh( geometry, material );
 			
+			scene.add(ring);
 			
-			scene.add(dodec);
+			geometry = new THREE.RingGeometry(1, 5, 32);
+			ring2 = new THREE.Mesh(geometry, material);
+			
+			scene.add(ring2);
 			
 			camera.position.z = 5;
 			
@@ -37,8 +41,10 @@
 			{
 				requestAnimationFrame( render );
 				
-				dodec.rotation.x += 0.01;
-				dodec.rotation.y += 0.01;
+				ring.rotation.x += 0.01;
+				ring.rotation.y += 0.01;
+				ring2.rotation.x -= 0.01;
+				ring2.rotation.y -= 0.01;
 				
 				renderer.render(scene, camera);
 			}
