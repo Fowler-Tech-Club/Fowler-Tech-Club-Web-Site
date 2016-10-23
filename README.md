@@ -1,6 +1,6 @@
 # Fowler-Tech-Club-Web-Site
 ![Image of Falcon](./imgs/falconico.jpg)
-## So far this is the unofficial website of Fowler Middle School's (undecided) Technology Club
+## So far this is the official website of Fowler Middle School's Technology Club
 
 ##Visit the website [here](https://pranoydll.github.io/Fowler-Tech-Club-Web-Site) for now...
 
